@@ -28,6 +28,7 @@ jobs:
           paths:
             - ./*.tar
   upload-latest:
+    name: publish-on-docker
     executor: mypublisher
     steps:
       - attach_workspace:
