@@ -15,13 +15,13 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: Build project docker (command docker-compose build)
+          name: Build de notre projet avec la commande docker-compose
           command: docker-compose -f docker-compose.yml build --force
       - run:
-          name: Docker image in the prject
+          name: Récupère nos images dans le projet
           command: docker images -a
       - run:
-          name: docker save allow to save node.js image
+          name: Sauvegarde l'image docker node js 
           command: docker save -o ./${PROJECT_NAME}_nodejs.tar project_nodejs
       - persist_to_workspace:
           root: .
@@ -34,22 +34,22 @@ jobs:
           at: /tmp/workspace
       - setup_remote_docker
       - run:
-          name: Load docker node.js that we save before 
+          name: Charge le docker de node js de notre projet 
           command: docker load -i /tmp/workspace/${PROJECT_NAME}_nodejs.tar
       - run:
-          name: Display our docker image
+          name: Affiche les docker images
           command: docker images -a
       - run:
-          name: Name our project with our login and project name
-          command: docker tag project_nodejs floberrot/${PROJECT_NAME}_nodejs:latest
+          name: Donne un nom a notre projet sur Docker HUB
+          command: docker tag project_nodejs ${PROJECT_NAME}_nodejs:latest/stevenflorian
       - run:
-          name: Publish To Docker Hub our docker image
+          name: Publication sur notre docker HUB
           command: |
             docker login -u $USER --password $PASS
-            docker push floberrot/${PROJECT_NAME}_nodejs:latest
+            docker push ${PROJECT_NAME}_nodejs:latest/stevenflorian
 workflows:
-  version: 2
-  build-master:
+  version: 2.1
+  build-publication:
     jobs:
       - build:
           filters:
