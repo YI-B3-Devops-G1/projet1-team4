@@ -2,7 +2,7 @@
 ---
 ## Info
 
-** Team 4 ** 
+**Team 4** 
 
 github_username: Flours06  
 mail: florian.berrot@ynov.com   
