@@ -1,13 +1,15 @@
 # B3 Devops - Projet 1
+---
 ## Info
-Team 4
+
+** Team 4 ** 
+
+github_username: Flours06  
+mail: florian.berrot@ynov.com   
+ 
+github_username: Theejkb  
+mail: steven.copy@ynov.com   
 ---
-mail: florian.berrot@ynov.com
-github_username: Flours06
----
-mail: steven.copy@ynov.com
-github_username: Theejkb
---
 
 ## CircleCI
 
