@@ -15,13 +15,13 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: Build Docker images (docker-compose)
+          name: Build project docker (command docker-compose build)
           command: docker-compose -f docker-compose.yml build --force
       - run:
-          name: View docker images
+          name: Docker image in the prject
           command: docker images -a
       - run:
-          name: Save nodejs Docker image
+          name: docker save allow to save node.js image
           command: docker save -o ./${PROJECT_NAME}_nodejs.tar project_nodejs
       - persist_to_workspace:
           root: .
@@ -34,16 +34,16 @@ jobs:
           at: /tmp/workspace
       - setup_remote_docker
       - run:
-          name: Load saved nodejs image
+          name: Load docker node.js that we save before 
           command: docker load -i /tmp/workspace/${PROJECT_NAME}_nodejs.tar
       - run:
-          name: View docker images
+          name: Display our docker image
           command: docker images -a
       - run:
-          name: Rename nodejs image
+          name: Name our project with our login and project name
           command: docker tag project_nodejs floberrot/${PROJECT_NAME}_nodejs:latest
       - run:
-          name: Publish Node Image to Docker Hub
+          name: Publish To Docker Hub our docker image
           command: |
             docker login -u $USER --password $PASS
             docker push floberrot/${PROJECT_NAME}_nodejs:latest
