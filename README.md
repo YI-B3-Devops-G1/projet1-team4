@@ -25,7 +25,9 @@ Création d'un compte sur docker hub pour accueillir notre image docker
 
 ## Projet 
 
-Utilisation du tp2 pour faire le circle ci
+Utilisation du tp2 pour faire le circle ci  
+On devait automatiser notre projet avec Github, pour cela, on a utilisé Circle CI.  
+Circle CI build le projet, fait des tests, et l'envoie en tant qu'image sur notre DockerHub
 
 ## Prérequis
 
