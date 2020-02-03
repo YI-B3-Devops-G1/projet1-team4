@@ -35,13 +35,13 @@ jobs:
       - setup_remote_docker
       - run:
           name: Charge le docker de node js de notre projet 
-          command: docker load -i /tmp/workspace/${PROJECT_NAME}_nodejs.tar
+          command: docker load -i /tmp/workspace/floberrot/${PROJECT_NAME}_nodejs.tar
       - run:
           name: Affiche les docker images
           command: docker images -a
       - run:
           name: Donne un nom a notre projet sur Docker HUB
-          command: docker tag project_nodejs ${PROJECT_NAME}_nodejs:latest
+          command: docker tag project_nodejs floberrot/${PROJECT_NAME}_nodejs:latest
       - run:
           name: Publication sur notre docker HUB
           command: |
