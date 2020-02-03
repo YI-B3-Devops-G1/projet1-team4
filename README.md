@@ -14,7 +14,7 @@ github_username: Theejkb
 Ajout du dossier CircleCi avec config.yaml dedans afin d'ajouter nos workflows avec les différenys jobs.  
 Ajout du repo a circle ci afin de faire nos wokflows.  
 Modif du fichier config.yaml grace a differentes docs  
-[Circle CId](https://circleci.com/docs/2.0/project-build/)
+[Circle CI](https://circleci.com/docs/2.0/project-build/)  
 [Some issues](https://github.com/EugenMayer/docker-sync/issues/641)  
 
 
