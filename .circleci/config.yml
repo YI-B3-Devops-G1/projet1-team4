@@ -16,7 +16,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker images (docker-compose)
-          command: docker-compose ./docker-compose.yaml build 
+          command: docker-compose -f ./docker-compose.yaml build --force
       - run:
           name: View docker images
           command: docker images -a
