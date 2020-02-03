@@ -3,17 +3,8 @@
 # Check https://circleci.com/docs/2.0/language-javascript/ for more details
 #
 version: 2
-executors:
-  docker:
-    environment:
-      PROJECT_NAME: projet1-team4
-      USER: "floberrot"
-      PASS: "9DMc79J3N+:8#gc"
-    docker:
-      - image: circleci/buildpack-deps:stretch
 jobs:
   build:
-    executor: mypublisher
     steps:
       - checkout
       - setup_remote_docker
@@ -31,7 +22,6 @@ jobs:
           paths:
             - ./*.tar
   upload-latest:
-    executor: mypublisher
     steps:
       - attach_workspace:
           at: /tmp/workspace
@@ -44,9 +34,9 @@ jobs:
           command: docker images -a
       - run:
           name: Rename nodejs image
-          command: docker tag project_nodejs floberrot/${PROJECT_NAME}_nodejs:latest
+          command: docker tag project_nodejs floberrot/projet1-team4}_nodejs:latest
       - run:
           name: Publish Node Image to Docker Hub
           command: |
-            docker login -u $USER --password $PASS
-            docker push floberrot/${PROJECT_NAME}_nodejs:latest
+            docker login -u floberrot --password 9DMc79J3N+:8#gc
+            docker push floberrot/projet1-team4_nodejs:latest
