@@ -27,3 +27,9 @@ Création d'un compte sur docker hub pour accueillir notre image docker
 
 Utilisation du tp2 pour faire le circle ci
 
+## Prérequis
+
+- Docker & Docker hub
+- Powershell
+- Node JS
+
