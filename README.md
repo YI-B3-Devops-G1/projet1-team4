@@ -7,8 +7,8 @@ github_username: Flours06
 ---
 mail: steven.copy@ynov.com
 github_username: Theejkb
----
-[...]
+--
+
 ## CircleCI
 
 Ajout du dossier CircleCi avec config.yaml dedans afin d'ajouter nos workflows avec les différenys jobs.  
