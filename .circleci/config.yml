@@ -27,7 +27,7 @@ jobs:
           root: .
           paths:
             - ./*.tar
-  upload-latest:
+  publish-on-docker:
     executor: mypublisher
     steps:
       - attach_workspace:
@@ -55,8 +55,7 @@ workflows:
           filters:
             branches:
               only: master
-      - upload-latest:
-          name: publish-on-docker
+      - publish-on-docker:
           requires:
             - build
           filters:
