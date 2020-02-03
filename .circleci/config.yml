@@ -41,12 +41,12 @@ jobs:
           command: docker images -a
       - run:
           name: Donne un nom a notre projet sur Docker HUB
-          command: docker tag project_nodejs floberrot/${PROJECT_NAME}_nodejs:latest
+          command: docker tag project_nodejs /${PROJECT_NAME}_nodejs:latest
       - run:
           name: Publication sur notre docker HUB
           command: |
             docker login -u $USER --password $PASS
-            docker push ${PROJECT_NAME}_nodejs:latest
+            docker push floberrot/${PROJECT_NAME}_nodejs:latest
 workflows:
   version: 2.1
   build-publication:
