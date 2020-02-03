@@ -16,7 +16,7 @@ jobs:
       - setup_remote_docker
       - run:
           name: Build Docker images (docker-compose)
-          command: docker-compose -f ./docker-compose.yaml build --compress --force-rm --no-cache --pull --parallel
+          command: docker-compose -f ././docker-compose.yaml build --compress --force-rm --no-cache --pull --parallel
       - run:
           name: View docker images
           command: docker images -a
@@ -41,12 +41,12 @@ jobs:
           command: docker images -a
       - run:
           name: Rename nodejs image
-          command: docker tag project_nodejs bambin401/${PROJECT_NAME}_nodejs:latest
+          command: docker tag project_nodejs floberrot/${PROJECT_NAME}_nodejs:latest
       - run:
           name: Publish Node Image to Docker Hub
           command: |
             docker login -u $USER --password $PASS
-            docker push bambin401/${PROJECT_NAME}_nodejs:latest
+            docker push floberrot/${PROJECT_NAME}_nodejs:latest
 workflows:
   version: 2
   build-master:
