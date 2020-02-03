@@ -1,6 +1,6 @@
 # B3 Devops - Projet 1
 ## Info
-Team X
+Team 4
 ---
 mail: florian.berrot@ynov.com
 github_username: Flours06
