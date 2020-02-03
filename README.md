@@ -1,15 +1,18 @@
 # B3 Devops - Projet 1
 ---
-## Info
-
-**Team 4** 
+## Info - Team 4
 
 github_username: Flours06  
 mail: florian.berrot@ynov.com   
  
 github_username: Theejkb  
 mail: steven.copy@ynov.com   
----
+
+## Prérequis
+
+- Docker & Docker hub
+- Powershell
+- Node JS
 
 ## CircleCI
 
@@ -31,9 +34,4 @@ Utilisation du tp2 pour faire le circle ci
 On devait automatiser notre projet avec Github, pour cela, on a utilisé Circle CI.  
 Circle CI build le projet, fait des tests, et l'envoie en tant qu'image sur notre DockerHub
 
-## Prérequis
-
-- Docker & Docker hub
-- Powershell
-- Node JS
 
