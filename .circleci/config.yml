@@ -4,7 +4,7 @@
 #
 version: 2
 executors:
-  mypublisher:
+  docker:
     environment:
       PROJECT_NAME: projet1-team4
       USER: "floberrot"
